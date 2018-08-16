@@ -1,5 +1,4 @@
-import Query from './Query';
-import Resource, { ResourceOptions } from './Resource';
+import Resource, { ResourceOptions, Query } from './Resource';
 
 export default function createResource<T>(
     data: T[],
