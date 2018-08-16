@@ -1,6 +1,8 @@
-export function createQuery(partialQuery: Partial<Query>): Query {
+import Query from '../../Query';
+
+export function createQuery(partialQuery: Partial<Query> = {}): Query {
     return {
-        fitler: null,
+        filter: null,
         sort: null,
         page: null,
         perPage: null,
