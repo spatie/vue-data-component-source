@@ -1,7 +1,7 @@
 import { Query } from '../Resource';
 
 export default function sort() {
-    return function <T>(data: T[], query: Query): T[] {
+    return function<T>(data: T[], query: Query): T[] {
         if (!query.sort) {
             return data;
         }
@@ -13,13 +13,16 @@ export default function sort() {
         const compareFunction = (a: T, b: T) => {
             const sortOrderIndex = sortOrder === 'desc' ? -1 : 1;
 
-            const result = a[sortBy as keyof T] < b[sortBy as keyof T] ? -1
-                : a[sortBy as keyof T] > b[sortBy as keyof T]
-                ? 1 : 0;
+            const result =
+                a[sortBy as keyof T] < b[sortBy as keyof T]
+                    ? -1
+                    : a[sortBy as keyof T] > b[sortBy as keyof T]
+                        ? 1
+                        : 0;
 
             return result * sortOrderIndex;
         };
 
         return data.sort(compareFunction);
-    }
+    };
 }

@@ -10,7 +10,7 @@ export default function createResource<T>(
     return resource.query.bind(resource);
 }
 
-export { Resource }
+export { Resource };
 
 export { default as sort } from './filters/sort';
 export { default as search } from './filters/search';

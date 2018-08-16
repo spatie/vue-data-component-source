@@ -1,7 +1,7 @@
 import { Query } from '../Resource';
 
 export default function paginate() {
-    return function <T>(data: T[], query: Query): T[] {
+    return function<T>(data: T[], query: Query): T[] {
         if (!query.perPage) {
             return data;
         }
@@ -12,5 +12,5 @@ export default function paginate() {
         const toIndex = fromIndex + query.perPage;
 
         return data.slice(fromIndex, toIndex);
-    }
+    };
 }
