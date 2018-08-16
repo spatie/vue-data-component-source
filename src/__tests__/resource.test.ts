@@ -1,4 +1,4 @@
-import createResource, { Resource } from '../';
+import createResource, { Resource } from '../index';
 import people from './helpers/people';
 
 describe('fetcher', () => {

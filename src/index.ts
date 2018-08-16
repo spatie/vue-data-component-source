@@ -1,16 +1,14 @@
 import Query from './Query';
-import Filter from './Filter';
-import Resource from './Resource';
+import Resource, { ResourceOptions } from './Resource';
 import search from './filters/search';
+
+export { Resource }
 
 export default function createResource<T>(
     data: T[],
-    filters: Filter<T>[] | null = null
+    options: Partial<ResourceOptions> = {}
 ): (query?: Partial<Query>) => T[] {
-    const resource = new Resource(data, filters || [
-        search()
-    ]);
+    const resource = new Resource(data, options);
 
-    return (queryParameters: Partial<Query> = {}) =>
-        resource.query(new Query(queryParameters));
+    return resource.query.bind(resource);
 }
