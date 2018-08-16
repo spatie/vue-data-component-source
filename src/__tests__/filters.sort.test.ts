@@ -9,16 +9,16 @@ it('does nothing when empty', () => {
 });
 
 it('sorts ascending by default', () => {
-    const results = sort()(people, createQuery({ sort: 'job' }));
+    const results = sort()(people, createQuery({ sort: 'name' }));
 
     expect(results).toEqual([
-        { name: 'Jef', job: 'Account manager' },
-        { name: 'Wouter', job: 'Account manager' },
-        { name: 'Willem', job: 'Designer' },
         { name: 'Alex', job: 'Developer' },
         { name: 'Brent', job: 'Developer' },
         { name: 'Freek', job: 'Developer' },
+        { name: 'Jef', job: 'Account manager' },
         { name: 'Sebastian', job: 'Developer' },
+        { name: 'Willem', job: 'Designer' },
+        { name: 'Wouter', job: 'Account manager' },
     ]);
 });
 

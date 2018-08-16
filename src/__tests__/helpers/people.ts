@@ -4,11 +4,11 @@ interface Person {
 }
 
 export default <Person[]>[
-    { name: 'Alex', job: 'Developer' },
-    { name: 'Brent', job: 'Developer' },
+    { name: 'Willem', job: 'Designer' },
     { name: 'Freek', job: 'Developer' },
     { name: 'Jef', job: 'Account manager' },
     { name: 'Sebastian', job: 'Developer' },
-    { name: 'Willem', job: 'Designer' },
+    { name: 'Alex', job: 'Developer' },
+    { name: 'Brent', job: 'Developer' },
     { name: 'Wouter', job: 'Account manager' },
 ];

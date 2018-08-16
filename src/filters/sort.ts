@@ -1,4 +1,4 @@
-import Query from '../Query';
+import { Query } from '../Resource';
 
 export default function sort() {
     return function <T>(data: T[], query: Query): T[] {

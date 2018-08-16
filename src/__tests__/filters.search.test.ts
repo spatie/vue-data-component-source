@@ -2,10 +2,14 @@ import search from '../filters/search';
 import people from './helpers/people';
 import { createQuery } from './helpers/util';
 
-it("searches all fields by specifying `['*']`", () => {
-    const searchAll = search();
+it('does nothing when empty', () => {
+    const results = search()(people, createQuery());
 
-    const results = searchAll(people, createQuery({ filter: 'Seb' }));
+    expect(results).toEqual(people);
+});
+
+it("searches all fields by specifying `['*']`", () => {
+    const results = search()(people, createQuery({ filter: 'Seb' }));
 
     expect(results).toHaveLength(1);
     expect(results[0].name).toBe('Sebastian');

@@ -1,3 +1,5 @@
+import { Query } from '../Resource';
+
 interface SearchOptions {
     fields: Array<string>;
     getQuery: (filter: any) => string;
