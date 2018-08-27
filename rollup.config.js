@@ -1,12 +1,14 @@
 import pkg from './package.json';
+import babel from 'rollup-plugin-babel';
 import { uglify } from 'rollup-plugin-uglify';
-import typescript from 'rollup-plugin-typescript2';
 
 export default [
-	{
-		input: 'src/index.ts',
+    {
+        input: 'src/index.js',
         plugins: [
-            typescript(),
+            babel({
+                exclude: 'node_modules/**',
+            }),
         ],
         output: [
             {
@@ -20,14 +22,18 @@ export default [
             },
             {
                 file: pkg.browser,
-                format: 'umd', name: 'DataResource', exports: 'named',
+                format: 'umd',
+                name: 'DataResource',
+                exports: 'named',
             },
         ],
-	},
-	{
-		input: 'src/index.ts',
+    },
+    {
+        input: 'src/index.js',
         plugins: [
-            typescript(),
+            babel({
+                exclude: 'node_modules/**',
+            }),
             uglify(),
         ],
         output: [
@@ -38,5 +44,5 @@ export default [
                 exports: 'named',
             },
         ],
-	},
+    },
 ];

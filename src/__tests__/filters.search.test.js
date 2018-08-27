@@ -59,7 +59,10 @@ it('searches with a custom query with getQuery', () => {
         getQuery: filter => filter.query,
     });
 
-    const results = searchAll(people, createQuery({ filter: { query: 'Seb' } }));
+    const results = searchAll(
+        people,
+        createQuery({ filter: { query: 'Seb' } })
+    );
 
     expect(results).toHaveLength(1);
     expect(results[0].name).toBe('Sebastian');

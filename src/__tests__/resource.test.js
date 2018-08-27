@@ -19,7 +19,10 @@ it('returns a total count', () => {
     const result = userResource({ perPage: 2 });
 
     expect(result).toEqual({
-        data: [{ name: 'Willem', job: 'Designer' }, { name: 'Freek', job: 'Developer' }],
+        data: [
+            { name: 'Willem', job: 'Designer' },
+            { name: 'Freek', job: 'Developer' },
+        ],
         totalCount: 7,
     });
 });

@@ -1,9 +1,6 @@
-import Resource, { ResourceOptions, Query } from './Resource';
+import Resource from './Resource';
 
-export default function createResource<T>(
-    data: T[],
-    options: Partial<ResourceOptions<T>> = {}
-): (query?: Partial<Query>) => T[] {
+export default function createResource(data, options) {
     const resource = new Resource(data, options);
 
     return resource.query.bind(resource);

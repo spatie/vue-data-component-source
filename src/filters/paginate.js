@@ -1,7 +1,5 @@
-import { Query } from '../Resource';
-
 export default function paginate() {
-    return function<T>(data: T[], query: Query): T[] {
+    return function(data, query) {
         if (!query.perPage) {
             return data;
         }

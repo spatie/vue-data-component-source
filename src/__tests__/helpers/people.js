@@ -1,9 +1,4 @@
-interface Person {
-    name: string;
-    job: string;
-}
-
-export default <Person[]>[
+export default [
     { name: 'Willem', job: 'Designer' },
     { name: 'Freek', job: 'Developer' },
     { name: 'Jef', job: 'Account manager' },
