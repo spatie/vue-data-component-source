@@ -2,8 +2,8 @@ import search from './filters/search';
 import sort from './filters/sort';
 import paginate from './filters/paginate';
 
-export default class Resource {
-    constructor(data, options) {
+export default class Source {
+    constructor(data, options = {}) {
         this.data = data;
 
         this.filters = options.filters || [search(), sort(), paginate()];

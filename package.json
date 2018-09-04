@@ -1,10 +1,10 @@
 {
-  "name": "vue-data-component-resource",
+  "name": "vue-data-component-source",
   "version": "0.1.0",
-  "browser": "dist/vue-data-component-resource.js",
-  "main": "dist/vue-data-component-resource.common.js",
-  "module": "dist/vue-data-component-resource.esm.js",
-  "repository": "https://github.com/spatie/vue-data-component-resource",
+  "browser": "dist/vue-data-component-source.js",
+  "main": "dist/vue-data-component-source.common.js",
+  "module": "dist/vue-data-component-source.esm.js",
+  "repository": "https://github.com/spatie/vue-data-component-source",
   "author": "Sebastian De Deyne",
   "license": "MIT",
   "private": false,
@@ -17,8 +17,8 @@
     "size-limit": "size-limit"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-rc.3",
-    "@babel/preset-env": "7.0.0-rc.3",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
     "babel-jest": "^23.4.2",
     "jest": "^23.5.0",
     "prettier": "^1.14.2",
@@ -27,13 +27,13 @@
     "rollup-plugin-uglify": "^4.0.0",
     "size-limit": "^0.19.2"
   },
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  },
   "size-limit": [
     {
-      "path": "dist/vue-data-component-resource.min.js",
+      "path": "dist/vue-data-component-source.min.js",
       "limit": "2 KB"
     }
-  ],
-  "dependencies": {
-    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-rc.3"
-  }
+  ]
 }

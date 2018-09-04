@@ -9,7 +9,10 @@ it('does nothing when empty', () => {
 });
 
 it("searches all fields by specifying `['*']`", () => {
-    const results = search()(people, createQuery({ filter: 'Seb' }));
+    const results = search()(
+        people,
+        createQuery({ filter: { search: 'Seb' } })
+    );
 
     expect(results).toHaveLength(1);
     expect(results[0].name).toBe('Sebastian');
@@ -20,11 +23,14 @@ it('searches specific fields when specified', () => {
         fields: ['name'],
     });
 
-    let results = searchName(people, createQuery({ filter: 'Developer' }));
+    let results = searchName(
+        people,
+        createQuery({ filter: { search: 'Developer' } })
+    );
 
     expect(results).toHaveLength(0);
 
-    results = searchName(people, createQuery({ filter: 'Seb' }));
+    results = searchName(people, createQuery({ filter: { search: 'Seb' } }));
 
     expect(results).toHaveLength(1);
     expect(results).toEqual([{ name: 'Sebastian', job: 'Developer' }]);
@@ -33,7 +39,10 @@ it('searches specific fields when specified', () => {
 it('searches case insensitively', () => {
     const searchAll = search();
 
-    const results = searchAll(people, createQuery({ filter: 'seb' }));
+    const results = searchAll(
+        people,
+        createQuery({ filter: { search: 'seb' } })
+    );
 
     expect(results).toHaveLength(1);
     expect(results[0].name).toBe('Sebastian');
@@ -44,19 +53,19 @@ it("doesn't search when minQueryLength isn't met", () => {
         minQueryLength: 5,
     });
 
-    let results = searchAll(people, createQuery({ filter: 'seb' }));
+    let results = searchAll(people, createQuery({ filter: { search: 'seb' } }));
 
     expect(results).toEqual(people);
 
-    results = searchAll(people, createQuery({ filter: 'sebas' }));
+    results = searchAll(people, createQuery({ filter: { search: 'sebas' } }));
 
     expect(results).toHaveLength(1);
     expect(results[0].name).toBe('Sebastian');
 });
 
-it('searches with a custom query with getQuery', () => {
+it('searches with a custom key', () => {
     const searchAll = search({
-        getQuery: filter => filter.query,
+        key: 'query',
     });
 
     const results = searchAll(

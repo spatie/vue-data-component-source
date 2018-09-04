@@ -1,6 +1,8 @@
 export function createQuery(partialQuery) {
     return {
-        filter: null,
+        filter: {
+            search: '',
+        },
         sort: null,
         page: null,
         perPage: null,

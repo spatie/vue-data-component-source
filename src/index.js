@@ -1,12 +1,12 @@
-import Resource from './Resource';
+import Source from './Source';
 
-export default function createResource(data, options) {
-    const resource = new Resource(data, options);
+export default function createSource(data, options) {
+    const resource = new Source(data, options);
 
     return resource.query.bind(resource);
 }
 
-export { Resource };
+export { Source };
 
 export { default as sort } from './filters/sort';
 export { default as search } from './filters/search';

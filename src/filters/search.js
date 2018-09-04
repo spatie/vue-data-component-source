@@ -1,8 +1,6 @@
-import { get } from '../util';
-
 const defaultSearchOptions = {
     fields: ['*'],
-    key: 'filter',
+    key: 'search',
     minQueryLength: 0,
 };
 
@@ -13,7 +11,9 @@ export default function search(searchOptions) {
     };
 
     return function(data, query) {
-        const searchQuery = normalizeQuery(get(query, key));
+        const searchQuery = normalizeQuery(
+            query.filter ? query.filter[key] : ''
+        );
 
         if (
             !searchQuery ||
@@ -44,7 +44,7 @@ export default function search(searchOptions) {
 
 function normalizeQuery(query) {
     if (query && typeof query !== 'string') {
-        throw new Error('Filter must be a string');
+        throw new Error(`Filter must be a string, [${query}] provided.`);
     }
 
     if (!query) {
