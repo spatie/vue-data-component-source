@@ -1,10 +1,10 @@
 {
-  "name": "data-resource",
+  "name": "vue-data-component-resource",
   "version": "0.1.0",
-  "browser": "dist/data-resource.js",
-  "main": "dist/data-resource.common.js",
-  "module": "dist/data-resource.esm.js",
-  "repository": "https://github.com/spatie/data-resource",
+  "browser": "dist/vue-data-component-resource.js",
+  "main": "dist/vue-data-component-resource.common.js",
+  "module": "dist/vue-data-component-resource.esm.js",
+  "repository": "https://github.com/spatie/vue-data-component-resource",
   "author": "Sebastian De Deyne",
   "license": "MIT",
   "private": false,
@@ -29,7 +29,7 @@
   },
   "size-limit": [
     {
-      "path": "dist/data-resource.min.js",
+      "path": "dist/vue-data-component-resource.min.js",
       "limit": "2 KB"
     }
   ],

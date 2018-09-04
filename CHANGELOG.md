@@ -1,3 +1,3 @@
 # Changelog
 
-All notable changes to `data-resource` will be documented in this file.
+All notable changes to `vue-data-component-resource` will be documented in this file.
