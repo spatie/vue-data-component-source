@@ -30,7 +30,7 @@
   "size-limit": [
     {
       "path": "dist/data-resource.min.js",
-      "limit": "1 KB"
+      "limit": "2 KB"
     }
   ],
   "dependencies": {
